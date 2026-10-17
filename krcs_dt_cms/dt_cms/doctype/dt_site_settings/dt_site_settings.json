@@ -1,0 +1,139 @@
+{
+ "actions": [],
+ "allow_rename": 0,
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "hero_section",
+  "hero_word_a",
+  "hero_word_b",
+  "hero_body",
+  "marquee_items",
+  "stats_section",
+  "stat_counties",
+  "stat_lives",
+  "stat_projects",
+  "stat_awards",
+  "stat_team",
+  "cta_section",
+  "cta_headline",
+  "cta_body",
+  "partner_email"
+ ],
+ "fields": [
+  {
+   "fieldname": "hero_section",
+   "fieldtype": "Section Break",
+   "label": "Hero"
+  },
+  {
+   "default": "PAPER",
+   "fieldname": "hero_word_a",
+   "fieldtype": "Data",
+   "label": "Hero Word A (From)"
+  },
+  {
+   "default": "PIXELS",
+   "fieldname": "hero_word_b",
+   "fieldtype": "Data",
+   "label": "Hero Word B (To)"
+  },
+  {
+   "fieldname": "hero_body",
+   "fieldtype": "Small Text",
+   "label": "Hero Body Text"
+  },
+  {
+   "fieldname": "marquee_items",
+   "fieldtype": "Small Text",
+   "label": "Marquee Items (comma-separated)"
+  },
+  {
+   "fieldname": "stats_section",
+   "fieldtype": "Section Break",
+   "label": "Impact Stats"
+  },
+  {
+   "default": "47",
+   "fieldname": "stat_counties",
+   "fieldtype": "Int",
+   "label": "Counties"
+  },
+  {
+   "default": "100k+",
+   "fieldname": "stat_lives",
+   "fieldtype": "Data",
+   "label": "Lives Impacted"
+  },
+  {
+   "default": "300+",
+   "fieldname": "stat_projects",
+   "fieldtype": "Data",
+   "label": "Projects Completed"
+  },
+  {
+   "default": "16+",
+   "fieldname": "stat_awards",
+   "fieldtype": "Data",
+   "label": "Awards Received"
+  },
+  {
+   "default": "34+",
+   "fieldname": "stat_team",
+   "fieldtype": "Data",
+   "label": "Team Members"
+  },
+  {
+   "fieldname": "cta_section",
+   "fieldtype": "Section Break",
+   "label": "Call to Action"
+  },
+  {
+   "default": "Humanity,",
+   "fieldname": "cta_headline",
+   "fieldtype": "Data",
+   "label": "CTA Headline"
+  },
+  {
+   "default": "Partner with the Digital Transformation Department to bring faster, smarter help to every community we serve.",
+   "fieldname": "cta_body",
+   "fieldtype": "Small Text",
+   "label": "CTA Body"
+  },
+  {
+   "fieldname": "partner_email",
+   "fieldtype": "Data",
+   "label": "Partner Email",
+   "options": "Email"
+  }
+ ],
+ "is_single": 1,
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "DT CMS",
+ "name": "DT Site Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 0,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "All"
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

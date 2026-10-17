@@ -1,9 +1,10 @@
 app_name = "krcs_dt_cms"
-app_title = "Krcs Dt Cms"
-app_publisher = "lnx"
-app_description = "cms"
-app_email = "mwitalnx@gmail.com"
+app_title = "KRCS DT CMS"
+app_publisher = "Kenya Red Cross Society"
+app_description = "Content management for the Digital Transformation website"
+app_email = "developer@redcross.or.ke"
 app_license = "mit"
+app_version = "0.0.1"
 
 # Apps
 # ------------------

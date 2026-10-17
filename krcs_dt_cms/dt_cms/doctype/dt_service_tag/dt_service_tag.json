@@ -1,0 +1,107 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:label",
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "label",
+  "dark",
+  "position_section",
+  "x_pos",
+  "y_pos",
+  "rotate",
+  "delay",
+  "display_section",
+  "display_order",
+  "published"
+ ],
+ "fields": [
+  {
+   "fieldname": "label",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Label",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "dark",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Dark Style"
+  },
+  {
+   "fieldname": "position_section",
+   "fieldtype": "Section Break",
+   "label": "CSS Position"
+  },
+  {
+   "fieldname": "x_pos",
+   "fieldtype": "Data",
+   "label": "Left (e.g. 22%)"
+  },
+  {
+   "fieldname": "y_pos",
+   "fieldtype": "Data",
+   "label": "Top (e.g. 2%)"
+  },
+  {
+   "fieldname": "rotate",
+   "fieldtype": "Data",
+   "label": "Rotate (e.g. -6deg)"
+  },
+  {
+   "fieldname": "delay",
+   "fieldtype": "Data",
+   "label": "Animation Delay (e.g. 0s)"
+  },
+  {
+   "fieldname": "display_section",
+   "fieldtype": "Section Break",
+   "label": "Display"
+  },
+  {
+   "default": "10",
+   "fieldname": "display_order",
+   "fieldtype": "Int",
+   "label": "Display Order"
+  },
+  {
+   "default": "1",
+   "fieldname": "published",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Published"
+  }
+ ],
+ "links": [],
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "DT CMS",
+ "name": "DT Service Tag",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "All"
+  }
+ ],
+ "sort_field": "display_order",
+ "sort_order": "ASC",
+ "track_changes": 1
+}

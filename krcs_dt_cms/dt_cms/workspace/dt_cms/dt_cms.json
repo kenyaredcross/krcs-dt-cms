@@ -1,0 +1,147 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"krc1\",\"type\":\"onboarding\"},{\"id\":\"krc2\",\"type\":\"shortcut\"},{\"id\":\"krc3\",\"type\":\"card\",\"data\":{\"card_name\":\"Content\",\"col\":12}}]",
+ "creation": "2026-01-01 00:00:00.000000",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "doctype": "Workspace",
+ "extends": "",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "is_hidden": 0,
+ "label": "DT CMS",
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "DT CMS",
+ "name": "DT CMS",
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "roles": [
+  {
+   "role": "System Manager"
+  }
+ ],
+ "sequence_id": 1.0,
+ "shortcuts": [
+  {
+   "color": "Red",
+   "doc_view": "List",
+   "icon": "edit",
+   "label": "Posts",
+   "link_to": "DT Post",
+   "type": "DocType"
+  },
+  {
+   "color": "Blue",
+   "doc_view": "List",
+   "icon": "users",
+   "label": "Team Members",
+   "link_to": "DT Team Member",
+   "type": "DocType"
+  },
+  {
+   "color": "Green",
+   "doc_view": "List",
+   "icon": "heart",
+   "label": "Field Voices",
+   "link_to": "DT Voice",
+   "type": "DocType"
+  },
+  {
+   "color": "Orange",
+   "doc_view": "List",
+   "icon": "tag",
+   "label": "Service Tags",
+   "link_to": "DT Service Tag",
+   "type": "DocType"
+  },
+  {
+   "color": "Gray",
+   "doc_view": "Form",
+   "icon": "setting",
+   "label": "Site Settings",
+   "link_to": "DT Site Settings",
+   "type": "DocType"
+  }
+ ],
+ "cards": [
+  {
+   "card_name": "Content",
+   "col": 12
+  }
+ ],
+ "links": [
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Content",
+   "link_count": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Posts",
+   "link_count": 0,
+   "link_to": "DT Post",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Team Members",
+   "link_count": 0,
+   "link_to": "DT Team Member",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Field Voices",
+   "link_count": 0,
+   "link_to": "DT Voice",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Service Tags",
+   "link_count": 0,
+   "link_to": "DT Service Tag",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Settings",
+   "link_count": 0,
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Site Settings",
+   "link_count": 0,
+   "link_to": "DT Site Settings",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  }
+ ]
+}
