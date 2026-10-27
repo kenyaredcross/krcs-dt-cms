@@ -421,6 +421,21 @@ def _member_projects(member_name):
 	return [_project_card(frappe.get_doc("DT Project", n)) for n in names]
 
 
+@frappe.whitelist(allow_guest=True)
+def submit_inquiry(full_name, email, inquiry_type, message, organisation=None):
+	"""Create a DT Inquiry record from the public contact form."""
+	doc = frappe.new_doc("DT Inquiry")
+	doc.full_name = full_name
+	doc.email = email
+	doc.organisation = organisation or ""
+	doc.inquiry_type = inquiry_type
+	doc.message = message
+	doc.status = "New"
+	doc.insert(ignore_permissions=True)
+	frappe.db.commit()
+	return {"name": doc.name}
+
+
 def _cat_key(category):
 	return {
 		"Story": "story",

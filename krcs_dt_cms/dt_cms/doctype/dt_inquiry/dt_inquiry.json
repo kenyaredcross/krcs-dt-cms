@@ -1,0 +1,93 @@
+{
+ "actions": [],
+ "autoname": "format:INQ-{YYYY}-{#####}",
+ "creation": "2026-01-01 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "full_name",
+  "email",
+  "organisation",
+  "inquiry_type",
+  "message",
+  "status",
+  "submitted_at"
+ ],
+ "fields": [
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Email",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "organisation",
+   "fieldtype": "Data",
+   "label": "Organisation"
+  },
+  {
+   "fieldname": "inquiry_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Inquiry Type",
+   "options": "Book a Demo\nPartnership\nMedia & Press\nTech Collaboration\nGeneral",
+   "reqd": 1
+  },
+  {
+   "fieldname": "message",
+   "fieldtype": "Long Text",
+   "label": "Message",
+   "reqd": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Status",
+   "options": "New\nRead\nReplied\nClosed",
+   "default": "New"
+  },
+  {
+   "fieldname": "submitted_at",
+   "fieldtype": "Datetime",
+   "label": "Submitted At",
+   "read_only": 1
+  }
+ ],
+ "in_create": 1,
+ "modified": "2026-01-01 00:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "DT CMS",
+ "name": "DT Inquiry",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "role": "Guest",
+   "read": 0,
+   "write": 0,
+   "delete": 0
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "sort_field": "submitted_at",
+ "sort_order": "DESC",
+ "track_changes": 0
+}
