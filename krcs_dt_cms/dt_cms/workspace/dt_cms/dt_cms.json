@@ -1,6 +1,6 @@
 {
  "charts": [],
- "content": "[{\"id\":\"krc1\",\"type\":\"onboarding\"},{\"id\":\"krc2\",\"type\":\"shortcut\"},{\"id\":\"krc3\",\"type\":\"card\",\"data\":{\"card_name\":\"Content\",\"col\":12}}]",
+ "content": "[{\"id\": \"krc1\", \"type\": \"onboarding\"}, {\"id\": \"krc2\", \"type\": \"shortcut\"}, {\"id\": \"krc3\", \"type\": \"card\", \"data\": {\"card_name\": \"Content\", \"col\": 12}}, {\"id\": \"krc4\", \"type\": \"card\", \"data\": {\"card_name\": \"Submissions\", \"col\": 12}}]",
  "creation": "2026-01-01 00:00:00.000000",
  "developer_mode_only": 0,
  "disable_user_customization": 0,
@@ -10,7 +10,7 @@
  "hide_custom": 0,
  "is_hidden": 0,
  "label": "DT CMS",
- "modified": "2026-01-01 00:00:00.000000",
+ "modified": "2026-11-25 00:00:00.000000",
  "modified_by": "Administrator",
  "module": "DT CMS",
  "name": "DT CMS",
@@ -24,6 +24,14 @@
  ],
  "sequence_id": 1.0,
  "shortcuts": [
+  {
+   "color": "Purple",
+   "doc_view": "List",
+   "icon": "handshake",
+   "label": "Partnership Requests",
+   "link_to": "DT Partnership Request",
+   "type": "DocType"
+  },
   {
    "color": "Red",
    "doc_view": "List",
@@ -68,6 +76,10 @@
  "cards": [
   {
    "card_name": "Content",
+   "col": 12
+  },
+  {
+   "card_name": "Submissions",
    "col": 12
   }
  ],
@@ -141,6 +153,36 @@
    "link_to": "DT Site Settings",
    "link_type": "DocType",
    "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "link_count": 0,
+   "label": "Submissions",
+   "type": "Card Break"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "link_count": 0,
+   "label": "Partnership Requests",
+   "link_to": "DT Partnership Request",
+   "link_type": "DocType",
+   "onboard": 1,
+   "type": "Link"
+  },
+  {
+   "dependencies": "",
+   "hidden": 0,
+   "is_query_report": 0,
+   "link_count": 0,
+   "label": "Inquiries",
+   "link_to": "DT Inquiry",
+   "link_type": "DocType",
+   "onboard": 0,
    "type": "Link"
   }
  ]

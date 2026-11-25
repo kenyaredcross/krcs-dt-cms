@@ -1,5 +1,6 @@
 import re
 import frappe
+from frappe.rate_limiter import rate_limit
 
 # curly/smart quote characters to strip from blockquote edges
 _QUOTES = u'"“”‘’\''
@@ -36,7 +37,9 @@ def _clean_body(html):
 
 @frappe.whitelist(allow_guest=True)
 def get_site_settings():
-	doc = frappe.get_single("DT Site Settings")
+	# get_singles_dict returns empty values (not an error) when the settings
+	# have never been saved, so the defaults below apply instead of a 403.
+	doc = frappe.db.get_singles_dict("DT Site Settings")
 	return {
 		"hero_word_a": doc.hero_word_a or "PAPER",
 		"hero_word_b": doc.hero_word_b or "PIXELS",
@@ -430,6 +433,79 @@ def submit_inquiry(full_name, email, inquiry_type, message, organisation=None):
 	doc.organisation = organisation or ""
 	doc.inquiry_type = inquiry_type
 	doc.message = message
+	doc.status = "New"
+	doc.insert(ignore_permissions=True)
+	frappe.db.commit()
+	return {"name": doc.name}
+
+
+def _select_options(doctype, fieldname):
+	field = frappe.get_meta(doctype).get_field(fieldname)
+	return [o for o in (field.options or "").split("\n") if o.strip()]
+
+
+@frappe.whitelist(allow_guest=True)
+def get_partnership_options():
+	"""Option lists for the public partnership form."""
+	from krcs_dt_cms.dt_cms.doctype.dt_partnership_request.dt_partnership_request import (
+		AREAS_OF_INTEREST,
+		AREAS_OF_OPERATION,
+		GEOGRAPHIC_SCOPES,
+		PARTNERSHIP_TYPES,
+	)
+
+	return {
+		"countries": frappe.get_all("Country", pluck="name", order_by="name asc"),
+		"organisation_types": _select_options("DT Partnership Request", "organisation_type"),
+		"durations": _select_options("DT Partnership Request", "proposed_duration"),
+		"partnership_types": PARTNERSHIP_TYPES,
+		"areas_of_interest": AREAS_OF_INTEREST,
+		"areas_of_operation": AREAS_OF_OPERATION,
+		"geographic_scopes": GEOGRAPHIC_SCOPES,
+	}
+
+
+def _as_lines(value):
+	"""Accept a JSON list, a Python list or a newline string; return newline text."""
+	if isinstance(value, str):
+		value = value.strip()
+		if value.startswith("["):
+			value = frappe.parse_json(value)
+	if isinstance(value, (list, tuple)):
+		return "\n".join(str(v).strip() for v in value if str(v).strip())
+	return value or ""
+
+
+@frappe.whitelist(allow_guest=True, methods=["POST"])
+@rate_limit(limit=5, seconds=60 * 60)
+def submit_partnership_request(**data):
+	"""Create a DT Partnership Request from the public partnership form."""
+	# Honeypot: real users never see or fill this field.
+	if (data.get("website_hp") or "").strip():
+		return {"name": None}
+
+	doc = frappe.new_doc("DT Partnership Request")
+	for field in (
+		"full_name",
+		"organisation_name",
+		"email",
+		"phone",
+		"job_title",
+		"organisation_website",
+		"country",
+		"organisation_type",
+		"organisation_description",
+		"proposed_initiative",
+		"expected_outcomes",
+		"proposed_duration",
+	):
+		doc.set(field, (data.get(field) or "").strip())
+
+	for field in ("areas_of_operation", "partnership_types", "areas_of_interest", "geographic_scope"):
+		doc.set(field, _as_lines(data.get(field)))
+
+	doc.year_established = frappe.utils.cint(data.get("year_established")) or None
+	doc.proposed_start_date = data.get("proposed_start_date") or None
 	doc.status = "New"
 	doc.insert(ignore_permissions=True)
 	frappe.db.commit()

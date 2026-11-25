@@ -1,0 +1,244 @@
+{
+ "actions": [],
+ "autoname": "PRT-.YYYY.-.#####",
+ "creation": "2026-11-25 00:00:00.000000",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "contact_section",
+  "full_name",
+  "organisation_name",
+  "email",
+  "phone",
+  "contact_col",
+  "job_title",
+  "organisation_website",
+  "country",
+  "organisation_section",
+  "organisation_type",
+  "year_established",
+  "areas_of_operation",
+  "organisation_col",
+  "organisation_description",
+  "partnership_section",
+  "partnership_types",
+  "areas_of_interest",
+  "partnership_col",
+  "proposed_duration",
+  "proposed_start_date",
+  "geographic_scope",
+  "proposal_section",
+  "proposed_initiative",
+  "expected_outcomes",
+  "review_section",
+  "status",
+  "submitted_at",
+  "review_col",
+  "internal_notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "contact_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Information"
+  },
+  {
+   "fieldname": "full_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Full Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "organisation_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Organisation Name",
+   "reqd": 1
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Official Email Address",
+   "options": "Email",
+   "reqd": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone Number",
+   "options": "Phone",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "job_title",
+   "fieldtype": "Data",
+   "label": "Job Title / Position"
+  },
+  {
+   "fieldname": "organisation_website",
+   "fieldtype": "Data",
+   "label": "Organisation Website",
+   "options": "URL"
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Country",
+   "options": "Country",
+   "reqd": 1
+  },
+  {
+   "fieldname": "organisation_section",
+   "fieldtype": "Section Break",
+   "label": "Organisation Information"
+  },
+  {
+   "fieldname": "organisation_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Organisation Type",
+   "options": "NGO / Non-profit\nGovernment Institution\nPrivate Sector / Corporate\nInternational Organisation\nFoundation / Trust\nAcademic / Research Institution\nDevelopment Partner / Donor\nCommunity-Based Organisation\nIndividual",
+   "reqd": 1
+  },
+  {
+   "fieldname": "year_established",
+   "fieldtype": "Int",
+   "label": "Year Established"
+  },
+  {
+   "description": "One per line",
+   "fieldname": "areas_of_operation",
+   "fieldtype": "Small Text",
+   "label": "Area of Operation",
+   "reqd": 1
+  },
+  {
+   "fieldname": "organisation_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "organisation_description",
+   "fieldtype": "Text",
+   "label": "Organisation Description"
+  },
+  {
+   "fieldname": "partnership_section",
+   "fieldtype": "Section Break",
+   "label": "Partnership Interest"
+  },
+  {
+   "description": "One per line",
+   "fieldname": "partnership_types",
+   "fieldtype": "Small Text",
+   "label": "Type of Partnership",
+   "reqd": 1
+  },
+  {
+   "description": "One per line",
+   "fieldname": "areas_of_interest",
+   "fieldtype": "Small Text",
+   "label": "Areas of Interest",
+   "reqd": 1
+  },
+  {
+   "fieldname": "partnership_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "proposed_duration",
+   "fieldtype": "Select",
+   "label": "Proposed Duration",
+   "options": "\nLess than 6 months\n6 to 12 months\n1 to 2 years\n2 to 5 years\nMore than 5 years\nTo be determined"
+  },
+  {
+   "fieldname": "proposed_start_date",
+   "fieldtype": "Date",
+   "label": "Proposed Start Date"
+  },
+  {
+   "description": "One per line",
+   "fieldname": "geographic_scope",
+   "fieldtype": "Small Text",
+   "label": "Geographic Scope"
+  },
+  {
+   "fieldname": "proposal_section",
+   "fieldtype": "Section Break",
+   "label": "Proposal"
+  },
+  {
+   "fieldname": "proposed_initiative",
+   "fieldtype": "Text",
+   "label": "Proposed Partnership / Initiative",
+   "reqd": 1
+  },
+  {
+   "fieldname": "expected_outcomes",
+   "fieldtype": "Text",
+   "label": "Expected Outcomes"
+  },
+  {
+   "collapsible": 0,
+   "fieldname": "review_section",
+   "fieldtype": "Section Break",
+   "label": "Review"
+  },
+  {
+   "default": "New",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "New\nUnder Review\nShortlisted\nApproved\nDeclined"
+  },
+  {
+   "fieldname": "submitted_at",
+   "fieldtype": "Datetime",
+   "label": "Submitted At",
+   "read_only": 1
+  },
+  {
+   "fieldname": "review_col",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "internal_notes",
+   "fieldtype": "Text",
+   "label": "Internal Notes"
+  }
+ ],
+ "modified": "2026-11-25 00:00:01.000000",
+ "modified_by": "Administrator",
+ "module": "DT CMS",
+ "name": "DT Partnership Request",
+ "naming_rule": "Expression (old style)",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "organisation_name",
+ "track_changes": 1
+}
