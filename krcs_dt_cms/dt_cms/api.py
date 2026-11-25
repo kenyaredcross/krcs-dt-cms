@@ -480,9 +480,11 @@ def _as_lines(value):
 @rate_limit(limit=5, seconds=60 * 60)
 def submit_partnership_request(**data):
 	"""Create a DT Partnership Request from the public partnership form."""
-	# Honeypot: real users never see or fill this field.
-	if (data.get("website_hp") or "").strip():
-		return {"name": None}
+	# Honeypot: a hidden field people never see. If it is filled the request is
+	# probably a bot, but browser autofill can fill it too, so the record is
+	# still saved (flagged as Spam) rather than dropped. "website_hp" is the
+	# old field name, still sent by cached copies of the form.
+	looks_like_spam = any((data.get(k) or "").strip() for k in ("dt_hp_7c1e", "website_hp"))
 
 	doc = frappe.new_doc("DT Partnership Request")
 	for field in (
@@ -506,7 +508,7 @@ def submit_partnership_request(**data):
 
 	doc.year_established = frappe.utils.cint(data.get("year_established")) or None
 	doc.proposed_start_date = data.get("proposed_start_date") or None
-	doc.status = "New"
+	doc.status = "Spam" if looks_like_spam else "New"
 	doc.insert(ignore_permissions=True)
 	frappe.db.commit()
 	return {"name": doc.name}
